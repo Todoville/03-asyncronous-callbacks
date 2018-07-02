@@ -20,7 +20,8 @@ describe('testing the ol filereaderino', () => {
   });
 
   test('should show that the data in our readThreeFiles function is equivalent to the data in our mockData array', () => {
-    fileReader.readThreeFiles(mockText1, mockText2, mockText3, (err, data1, data2, data3) => { 
+    fileReader.readThreeFiles(mockData, (err, data1, data2, data3) => { 
+      if (err) throw err;
       expect(data1).toEqual(mockData[0]);
       expect(data2).toEqual(mockData[1]);
       expect(data3).toEqual(mockData[2]);
